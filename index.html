@@ -1,0 +1,119 @@
+<!-- index.html
+Soru: Bu HTML sayfası ne yapacak?
+Cevap: Fetal Health verisetini tablo olarak gösterecek, kullanıcı satır seçtiğinde
+Python tarafına istek atacak, analiz ve kıyaslama sonuçlarını ekranda gösterecek.
+-->
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetal Health Analiz ve Kıyaslama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sayfa-kapsayici">
+    <header class="ust-bar">
+        <h1>Fetal Sağlık Analiz Sistemi</h1>
+    </header>
+
+    <main class="ana-icerik" >
+        <section class="sol-panel panel">
+            <h2>Veri Tablosu</h2>
+            <p class="aciklama">
+                Aşağıda fetüse ait tüm kayıtlar listelenmektedir.<br>
+                Her satırda yer alan “Analiz” butonuna tıklayarak model tahmini, risk skorları ve klinik değerlendirme sonuçlarını görüntüleyebilirsiniz.
+                
+            </p>
+            <div class="tablo-kutu">
+                <table>
+                    <thead id="tabloBaslik"></thead>
+                    <tbody id="tabloGovde"></tbody>
+                </table>
+            </div>
+            
+
+            <div id="klinikBilgi" style="margin-top:20px; padding:15px; border-radius:8px;">
+            <h2 style="margin-bottom:10px;"> CTG Klinik Rehber Notları</h2>
+
+            <h3>FIGO Sınıflaması (Gebelik Takibi)</h3>
+            <p>
+                FIGO, gebelik sırasında fetüsün kalp atım paternini değerlendirir ve oksijenlenme ile nörolojik durumu izler.<br>
+                <strong>Normal = güvenli</strong>,<br>
+                <strong>Şüpheli = yakın izlem</strong>,<br>
+                <strong>Patolojik = yüksek risk</strong> <br>
+            </p>
+
+            <h3>NICHD Kategorileri (ABD Rehberi)</h3>
+            <p>
+                NICHD fetüsün güvenli olup olmadığını değerlendirir.<br>
+                <strong>Kategori I = normal</strong>,<br>
+                <strong>Kategori II = belirsiz, takip gerekir</strong>,<br>
+                <strong>Kategori III = oksijen azalması riski</strong><br>
+            </p>
+
+            <h3>Hipoksi Riski (Fetüs Oksijen Azalması)</h3>
+            <p>
+                Hipoksi, fetüsün oksijen azalmasıdır.<br>
+                <strong>0–2 = düşük risk</strong>,<br>
+                <strong>3–6 = orta risk (yakın izlem)</strong>,<br>
+                <strong>7 ve üzeri = yüksek risk (tıbbi değerlendirme gerekir)</strong>.
+            </p>
+
+            <h3>Bu Rehber Ne İçin?</h3>
+            <ul>
+                <li>Gebelik sırasında fetüsün kalp atım özelliklerinin yorumlanması</li>
+                <li>Olası risklerin anlaşılması</li>
+                <li>Normal – şüpheli – patolojik ayrımının anlaşılması</li>
+            </ul>
+
+            <p style="font-size:14px; color:#777;">
+                Bu bilgiler, antenatal (gebelikte) CTG değerlendirme prensiplerine dayanmaktadır.
+                Doğum sırasında (intrapartum) kullanılan değerlendirmeler farklıdır.
+            </p>
+
+                        <div class="panel" style="padding: 10px;">
+                <h2>Model Özellik Önemleri</h2>
+                <p style="color:#555; font-size:14px;">
+                    Bu grafik, yapay zekâ modelinin karar verirken hangi CTG parametrelerini
+                    ne kadar dikkate aldığını gösterir.
+                </p>
+                <canvas id="featureChart" height="150"></canvas>
+            </div>
+
+        </div>
+
+        </section>
+
+        <section class="sag-panel">
+            <div class="panel analiz-panel">
+                <h2>Seçili Satır Analizi</h2>
+                <div id="analizSonuc" class="kart">
+                    <p>Tablodan bir satıra <strong>Analiz</strong> tıklayarak detayları burada görebilirsin.</p>
+                </div>
+            </div>
+
+        </section>
+        
+            
+        
+    </main>
+</div>
+
+<div id="klinikPencere" class="popup"></div>
+<div id="neuroPencere" class="popup"></div>
+<div id="backdrop"></div>
+
+<hr>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

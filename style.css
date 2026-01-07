@@ -1,0 +1,302 @@
+/* style.css
+Soru: Bu CSS dosyası ne yapacak?
+Cevap: Sayfayı modern, okunabilir ve düzenli bir görünüme kavuşturacak.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.sayfa-kapsayici {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.ust-bar {
+    background: #111827;
+    color: #f9fafb;
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.ust-bar h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.6rem;
+}
+
+.ust-bar p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.ana-icerik {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+    grid-gap: 16px;
+}
+
+.panel {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.sol-panel {
+    grid-row: 1 / 3;
+}
+
+.sag-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: #111827;
+}
+
+h3 {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+h4 {
+    margin: 8px 0 4px 0;
+    font-size: 1rem;
+}
+
+.tablo-kutu {
+    width: 100%;
+    max-width: 900px; /* tabloyu küçült */
+    max-height: 450px;
+    overflow-x: auto;  /* sağ–sol kaydır */
+    overflow-y: auto;  /* yukarı–aşağı kaydır */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    margin: 0 auto; /* ortala */
+    padding: 0;
+}
+
+table {
+    width: max-content;
+    border-collapse: collapse;
+    font-size: 0.8rem; /* tabloyu küçültür */
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+td, th {
+    white-space: nowrap;
+    padding: 4px 6px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.aciklama {
+    font-size: 0.9rem;
+    color: #4b5563;
+    margin-bottom: 10px;
+}
+
+
+
+thead {
+    position: sticky;
+    top: 0;
+    background: #111827;
+    color: #f9fafb;
+    z-index: 999;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+thead th {
+    height: 28px !important;
+    padding: 2px 6px !important;
+    font-size: 0.80rem !important;
+    line-height: 1 !important;
+}
+
+th {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+tbody tr:nth-child(even) {
+    background: #f3f4f6;
+}
+
+tbody tr:hover {
+    background: #e5e7eb;
+}
+
+/* Butonlar */
+
+.btn {
+    border: none;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+
+.btn-analiz {
+    background: #2563eb;
+    color: #f9fafb;
+}
+
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    opacity: 0.95;
+}
+
+/* Kartlar */
+
+.kart {
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.9rem;
+}
+
+.hata {
+    color: #b91c1c;
+    font-weight: 600;
+}
+
+/* Risk rozetleri */
+
+.rozet {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.rozet.yesil {
+    background: #16a34a;
+}
+
+.rozet.turuncu {
+    background: #f97316;
+}
+
+.rozet.kirmizi {
+    background: #dc2626;
+}
+
+/* Kıyaslama alanı */
+
+.kiyas-secim {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    background: #f3f4f6;
+    padding: 6px 8px;
+    border-radius: 8px;
+}
+
+.kiyas-ozet-kapsayici {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.kiyas-kart {
+    flex: 1;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 0.85rem;
+}
+
+.kiyas-tablo {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+.kiyas-tablo th,
+.kiyas-tablo td {
+    padding: 4px 6px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Responsive */
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    padding: 24px;
+    width: 600px;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow: auto;
+    z-index: 9999;
+}
+
+.popup .kapat {
+    float: right;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+
+#backdrop {
+    display:none;
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    background:rgba(0,0,0,0.45);
+    z-index:9998;
+}
+
+
+@media (max-width: 960px) {
+    .ana-icerik {
+        grid-template-columns: 1fr;
+    }
+
+    .sol-panel {
+        grid-row: auto;
+    }
+}
+
+
+
+
+canvas {
+    max-width: 100%;
+    
+}
