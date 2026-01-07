@@ -165,5 +165,5 @@ def model_grafik_veri():
 
 
 if __name__ == "__main__":
-    # Debug=True: geliştirme sırasında hataları görmen için
-    uygulama.run(debug=True)
+    uygulama.run(host="0.0.0.0", port=10000, debug=True)
+
